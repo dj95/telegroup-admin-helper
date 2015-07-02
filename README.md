@@ -1,4 +1,4 @@
-telgroup-admin-helper
+telegroup-admin-helper
 =====================
 
 Simple Python script for use with official Telegram bots.
