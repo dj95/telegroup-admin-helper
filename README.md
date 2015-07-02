@@ -7,8 +7,8 @@ Simple Python script for use with official Telegram bots.
 Features
 --------
 
-- checks in intervalls of banned usernames rejoined the group
-- if banned user joins group, a notification will be sent
+- checks in intervalls if banned usernames rejoined the group
+- if banned user rejoins the group, a notification will be sent
 
 
 TODO
