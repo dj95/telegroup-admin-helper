@@ -11,11 +11,27 @@ Features
 - if banned user rejoins the group, a notification will be sent
 
 
+Input parameters
+----------------
+
+```
+usage: telegram-admin-helper.py [-h] [--to TO] [--token TOKEN]
+                                [--interval INTERVAL] [--group-id GROUP_ID]
+
+optional arguments:
+  -h, --help           show this help message and exit
+  --to TO
+  --token TOKEN
+  --interval INTERVAL
+  --group-id GROUP_ID
+
+```
+
+
 TODO
 ----
 
-- test for updateid, so notifications will not be sent twice
-- config file and input args
+- config file
 - autokick (if possible)
 
 
