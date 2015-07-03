@@ -98,7 +98,8 @@ def main():
         WATCH_ID = int(watch_id)
         TOKEN = token
         BANNED_NICK_NAMES = banned_nicks
-        INTERVAL = interval
+        INTERVAL = float(interval)
+
     else:
         print('ERROR: Please set your config correctly!')
 
@@ -125,7 +126,8 @@ def main():
         os.mkdir('/var/lib/telegroup-admin-helper')
 
     print('telegram admin helper')
-    
+    global BASE_URL
+    BASE_URL = 'https://api.telegram.org/bot' + TOKEN + '/' # base url for bots (DON'T CHANGE!)
     get_updates(BASE_URL + 'getUpdates')
 
 
