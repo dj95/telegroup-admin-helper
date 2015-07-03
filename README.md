@@ -15,11 +15,9 @@ Features
 Installation
 ------------
 
-1.) Copy telegroup-admin-helper to /etc/ with `sudo cp telegroup-admin-helper /etc/`
-
-2.) Edit the config properly, otherwise the bot doesn't work!
-
-3.) Run the program with `sudo ./telegram-admin-helper.py &` to run in background or
+- Copy telegroup-admin-helper to /etc/ with `sudo cp telegroup-admin-helper /etc/`
+- Edit the config properly, otherwise the bot doesn't work!
+- Run the program with `sudo ./telegram-admin-helper.py &` to run in background or
     `sudo ./telegram-admin-helper.py` to run in foreground
 
 
