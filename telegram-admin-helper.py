@@ -26,6 +26,7 @@ CONFIG_FILE='/etc/telegroup-admin-helper'
 
 def get_updates(url):
     old_update_id = 0
+    global BANNED_NICK_NAMES
     while True:
         rqst = urllib.request.urlopen(url)
         data = json.loads(rqst.read().decode('utf-8'))
@@ -38,9 +39,8 @@ def get_updates(url):
                             send_notification('WARNING: ' + msg['message']['new_chat_participant']['username'] + ' rejoined Group ' + msg['message']['chat']['title'])
                             old_update_id = msg['update_id']
         # reparse config if new nicks are banned
-        global BANNED_NICK_NAMES
         notify_id, watch_id, token, banned_nicks, interval = parse_config()
-        if BANNED_NICK_NAMES is not banned_nicks and bannes_nicks is not ['']:
+        if BANNED_NICK_NAMES is not banned_nicks and banned_nicks is not ['']:
             BANNED_NICK_NAMES = banned_nicks
         time.sleep(INTERVAL)
 
