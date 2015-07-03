@@ -35,11 +35,10 @@ usage: telegram-admin-helper.py [-h] [--to TO] [--token TOKEN]
 
 optional arguments:
   -h, --help           show this help message and exit
-  --to TO
-  --token TOKEN
-  --interval INTERVAL
-  --group-id GROUP_ID
-
+  --to TO              ID, which should get the notification
+  --token TOKEN        token of your bot
+  --interval INTERVAL  interval between two updates
+  --group-id GROUP_ID  ID of group, which should be watched
 ```
 
 

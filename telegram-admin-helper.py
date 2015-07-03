@@ -37,7 +37,6 @@ def get_updates(url):
                     if msg['message']['new_chat_participant']['username'] in BANNED_NICK_NAMES:
                         if check_update_id(msg['update_id']):
                             send_notification('WARNING: ' + msg['message']['new_chat_participant']['username'] + ' rejoined Group ' + msg['message']['chat']['title'])
-                            old_update_id = msg['update_id']
         # reparse config if new nicks are banned
         notify_id, watch_id, token, banned_nicks, interval = parse_config()
         if BANNED_NICK_NAMES is not banned_nicks and banned_nicks is not ['']:
@@ -78,14 +77,14 @@ def parse_config():
             if not line[i].startswith('#') and not line[i].startswith('\n'):
                 if line[i].startswith('NOTIFY_CHAT_ID'):
                     notify_id = re.sub('\n', '', re.sub('NOTIFY_CHAT_ID=','', line[i]))
-                if line[i].startswith('WATCH_ID'):
+                elif line[i].startswith('WATCH_ID'):
                     watch_id = re.sub('\n', '', re.sub('WATCH_ID=','', line[i]))
-                if line[i].startswith('TOKEN'):
+                elif line[i].startswith('TOKEN'):
                     token = re.sub('\n', '', re.sub('TOKEN=','', line[i]))
-                if line[i].startswith('BANNED_NICK_NAMES'):
+                elif line[i].startswith('BANNED_NICK_NAMES'):
                     banned_nicks = re.sub('\n', '', re.sub('BANNED_NICK_NAMES=','', line[i]))
                     banned_nicks = banned_nicks.split(',')
-                if line[i].startswith('INTERVAL'):
+                elif line[i].startswith('INTERVAL'):
                     interval = re.sub('\n', '', re.sub('INTERVAL=','', line[i]))
         return notify_id, watch_id, token, banned_nicks, interval
 
@@ -109,10 +108,10 @@ def main():
 
     # arg parsing
     parser = argparse.ArgumentParser()
-    parser.add_argument('--to', type=str)
-    parser.add_argument('--token', type=str)
-    parser.add_argument('--interval', type=int)
-    parser.add_argument('--group-id', type=str)
+    parser.add_argument('--to', type=str, help='ID, which should get the notification')
+    parser.add_argument('--token', type=str, help='token of your bot')
+    parser.add_argument('--interval', type=int, help='interval between two updates')
+    parser.add_argument('--group-id', type=str, help='ID of group, which should be watched')
 
     args = parser.parse_args()
 
