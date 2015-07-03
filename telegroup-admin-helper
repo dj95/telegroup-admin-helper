@@ -1,0 +1,14 @@
+# ID which get the notifications (e.g. 123456)
+NOTIFY_CHAT_ID=
+
+# ID of the group, which should be watched (e.g. -123456)
+WATCH_ID=
+
+# list of banned nick names (e.g. test1,test,hello)
+BANNED_NICK_NAMES=
+
+# token of your bot
+TOKEN=
+
+# time before looking for new users (in seconds)
+INTERVAL=5
