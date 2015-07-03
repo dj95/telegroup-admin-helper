@@ -37,6 +37,11 @@ def get_updates(url):
                         if check_update_id(msg['update_id']):
                             send_notification('WARNING: ' + msg['message']['new_chat_participant']['username'] + ' rejoined Group ' + msg['message']['chat']['title'])
                             old_update_id = msg['update_id']
+        # reparse config if new nicks are banned
+        global BANNED_NICK_NAMES
+        notify_id, watch_id, token, banned_nicks, interval = parse_config()
+        if BANNED_NICK_NAMES is not banned_nicks and bannes_nicks is not ['']:
+            BANNED_NICK_NAMES = banned_nicks
         time.sleep(INTERVAL)
 
 
@@ -99,7 +104,6 @@ def main():
         TOKEN = token
         BANNED_NICK_NAMES = banned_nicks
         INTERVAL = float(interval)
-
     else:
         print('ERROR: Please set your config correctly!')
 
