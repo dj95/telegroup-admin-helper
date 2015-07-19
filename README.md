@@ -3,6 +3,8 @@ telegroup-admin-helper
 
 Simple Python script for use with official Telegram bots.
 
+[![endorse](https://api.coderwall.com/dj95/endorsecount.png)](https://coderwall.com/dj95)
+
 
 Features
 --------
